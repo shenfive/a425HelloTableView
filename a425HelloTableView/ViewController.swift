@@ -12,58 +12,43 @@ class ViewController: UIViewController,UITableViewDataSource, UITableViewDelegat
     
     @IBOutlet weak var theTableView: UITableView!
     
+    
+    var contents:[[String:String]] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         theTableView.dataSource = self
         theTableView.delegate = self
     }
 
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let userDefault = UserDefaults.standard
+        if let c = userDefault.value(forKey: "contents") as? [[String : String]]{
+            contents = c
+        }
+        theTableView.reloadData()
+    }
 
     //MARK: TableViewDelegate
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var count = 0
-        switch section {
-        case 0:
-            count = 5
-        case 1:
-            count = 3
-        default:
-            break
-        }
-        return count
+        return contents.count 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.section {
-        case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "myTableCell") as? MyTableViewCell
-            return cell ?? UITableViewCell()
-        case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "otherCell") as? MyOtherTableViewCell
-            print("\(indexPath)")
-            print(cell)
-            
-            return cell ?? UITableViewCell()
-        default:
-            return UITableViewCell()
-        }
-        
 
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myTableCell") as? MyTableViewCell
+        cell?.textLabel?.text = "\(indexPath)"
+        return cell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("\(indexPath)")
+//        print("\(indexPath)")
     }
-    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 125
-//    }
-//    
-    
+
 }
 

@@ -24,7 +24,7 @@ class InputViewController: UIViewController {
             contents = c
         }
         print("you get content:\(contents.count)")
-        
+        print(contents)
         
     }
     
