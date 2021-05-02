@@ -19,13 +19,36 @@ class ViewController: UIViewController,UITableViewDataSource {
 
 
     //MARK: TableViewDelegate
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        var count = 0
+        switch section {
+        case 0:
+            count = 5
+        case 1:
+            count = 3
+        default:
+            break
+        }
+        
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.backgroundColor = UIColor.red
+        switch indexPath.section {
+        case 0:
+            cell.backgroundColor = UIColor.red
+        case 1:
+            cell.backgroundColor = UIColor.yellow
+        default:
+            break
+        }
+        
         return cell
     }
     
