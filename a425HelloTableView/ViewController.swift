@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController,UITableViewDataSource {
+class ViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
 
     
     @IBOutlet weak var theTableView: UITableView!
@@ -15,6 +15,7 @@ class ViewController: UIViewController,UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         theTableView.dataSource = self
+        theTableView.delegate = self
     }
 
 
@@ -34,23 +35,23 @@ class ViewController: UIViewController,UITableViewDataSource {
         default:
             break
         }
-        
         return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        switch indexPath.section {
-        case 0:
-            cell.backgroundColor = UIColor.red
-        case 1:
-            cell.backgroundColor = UIColor.yellow
-        default:
-            break
-        }
+   
+        cell.textLabel?.text = "\(indexPath)"
+        
+        cell.selectionStyle = .none
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("\(indexPath)")
+    }
+    
     
     
 }
