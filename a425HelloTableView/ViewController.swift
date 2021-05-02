@@ -44,11 +44,13 @@ class ViewController: UIViewController,UITableViewDataSource, UITableViewDelegat
         let cell = tableView.dequeueReusableCell(withIdentifier: "myTableCell") as? MyTableViewCell
         cell?.headerImg.clipsToBounds = true
         cell?.headerImg.layer.cornerRadius = 20
+        cell?.phone.text = contents[indexPath.row]["phone"]
+        cell?.name.text = contents[indexPath.row]["name"]
         return cell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        print("\(indexPath)")
+
     }
 
 }
