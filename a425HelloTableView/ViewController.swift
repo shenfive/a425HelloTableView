@@ -42,7 +42,8 @@ class ViewController: UIViewController,UITableViewDataSource, UITableViewDelegat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "myTableCell") as? MyTableViewCell
-        cell?.textLabel?.text = "\(indexPath)"
+        cell?.headerImg.clipsToBounds = true
+        cell?.headerImg.layer.cornerRadius = 20
         return cell ?? UITableViewCell()
     }
     
