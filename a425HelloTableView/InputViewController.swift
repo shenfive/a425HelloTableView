@@ -13,20 +13,16 @@ class InputViewController: UIViewController {
     @IBOutlet weak var nameTF: UITextField!
     
     var contents:[[String:String]] = []
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         let userDefault = UserDefaults.standard
         if let c = userDefault.value(forKey: "contents") as? [[String : String]]{
             contents = c
         }
-        print("you get content:\(contents.count)")
-        print(contents)
-        
     }
+    
+    
     
     @IBAction func inputClicked(_ sender: Any) {
         let name = nameTF.text ?? ""

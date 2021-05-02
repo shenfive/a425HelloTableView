@@ -61,6 +61,12 @@ class ViewController: UIViewController,UITableViewDataSource, UITableViewDelegat
         
         let deleteAction = UIAlertAction.init(title: "刪除", style: .cancel) { alert in
             print("Delete Action")
+            self.contents.remove(at: indexPath.row)
+            let userDefault = UserDefaults.standard
+            userDefault.setValue(self.contents, forKey: "contents")
+            userDefault.synchronize()
+            self.theTableView.reloadData()
+            
         }
         alert.addAction(deleteAction)
         
