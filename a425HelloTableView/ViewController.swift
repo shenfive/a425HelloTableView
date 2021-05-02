@@ -50,7 +50,25 @@ class ViewController: UIViewController,UITableViewDataSource, UITableViewDelegat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        let name = contents[indexPath.row]["name"] ?? ""
+        let phone = contents[indexPath.row]["phone"] ?? ""
+        
+        
+        let alert = UIAlertController(title: "選項",
+                                      message: "你選了:\(name) \n\(phone)", preferredStyle: .alert)
+        let okAction = UIAlertAction.init(title: "我知道了", style: .default, handler: nil)
+        alert.addAction(okAction)
+        
+        let deleteAction = UIAlertAction.init(title: "刪除", style: .cancel) { alert in
+            print("Delete Action")
+        }
+        alert.addAction(deleteAction)
+        
+        
+        
+        present(alert, animated: true, completion: nil)
+        
+        
     }
 
 }
