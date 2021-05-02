@@ -39,20 +39,31 @@ class ViewController: UIViewController,UITableViewDataSource, UITableViewDelegat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myTableCell") as? MyTableViewCell
-   
+        switch indexPath.section {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "myTableCell") as? MyTableViewCell
+            return cell ?? UITableViewCell()
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "otherCell") as? MyOtherTableViewCell
+            print("\(indexPath)")
+            print(cell)
+            
+            return cell ?? UITableViewCell()
+        default:
+            return UITableViewCell()
+        }
         
-        return cell ?? UITableViewCell()
+
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("\(indexPath)")
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 125
-    }
-    
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 125
+//    }
+//    
     
 }
 

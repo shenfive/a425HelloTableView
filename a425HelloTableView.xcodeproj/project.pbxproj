@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B7054D0263E6B9700398796 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7054CF263E6B9700398796 /* InputViewController.swift */; };
 		3BF27EB5263E414F00EAB360 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF27EB4263E414F00EAB360 /* AppDelegate.swift */; };
 		3BF27EB7263E414F00EAB360 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF27EB6263E414F00EAB360 /* SceneDelegate.swift */; };
 		3BF27EB9263E414F00EAB360 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF27EB8263E414F00EAB360 /* ViewController.swift */; };
@@ -14,9 +15,11 @@
 		3BF27EBE263E415000EAB360 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BF27EBD263E415000EAB360 /* Assets.xcassets */; };
 		3BF27EC1263E415000EAB360 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BF27EBF263E415000EAB360 /* LaunchScreen.storyboard */; };
 		3BF27ECA263E4C4500EAB360 /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF27EC9263E4C4500EAB360 /* MyTableViewCell.swift */; };
+		3BF27ECD263E522D00EAB360 /* MyOtherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF27ECC263E522D00EAB360 /* MyOtherTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B7054CF263E6B9700398796 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 		3BF27EB1263E414F00EAB360 /* a425HelloTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = a425HelloTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BF27EB4263E414F00EAB360 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BF27EB6263E414F00EAB360 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +29,7 @@
 		3BF27EC0263E415000EAB360 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3BF27EC2263E415000EAB360 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BF27EC9263E4C4500EAB360 /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
+		3BF27ECC263E522D00EAB360 /* MyOtherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOtherTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				3BF27EBF263E415000EAB360 /* LaunchScreen.storyboard */,
 				3BF27EC2263E415000EAB360 /* Info.plist */,
 				3BF27EC9263E4C4500EAB360 /* MyTableViewCell.swift */,
+				3BF27ECC263E522D00EAB360 /* MyOtherTableViewCell.swift */,
+				3B7054CF263E6B9700398796 /* InputViewController.swift */,
 			);
 			path = a425HelloTableView;
 			sourceTree = "<group>";
@@ -142,6 +148,8 @@
 			files = (
 				3BF27EB9263E414F00EAB360 /* ViewController.swift in Sources */,
 				3BF27ECA263E4C4500EAB360 /* MyTableViewCell.swift in Sources */,
+				3BF27ECD263E522D00EAB360 /* MyOtherTableViewCell.swift in Sources */,
+				3B7054D0263E6B9700398796 /* InputViewController.swift in Sources */,
 				3BF27EB5263E414F00EAB360 /* AppDelegate.swift in Sources */,
 				3BF27EB7263E414F00EAB360 /* SceneDelegate.swift in Sources */,
 			);
