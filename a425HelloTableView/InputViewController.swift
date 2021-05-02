@@ -12,11 +12,20 @@ class InputViewController: UIViewController {
     @IBOutlet weak var phoneTF: UITextField!
     @IBOutlet weak var nameTF: UITextField!
     
+    var contents:[[String:String]] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
+        let userDefault = UserDefaults.standard
+        if let c = userDefault.value(forKey: "contents") as? [[String : String]]{
+            contents = c
+        }
+        print("you get content:\(contents.count)")
+        
+        
     }
     
     @IBAction func inputClicked(_ sender: Any) {
@@ -40,7 +49,6 @@ class InputViewController: UIViewController {
             let alert = UIAlertController.init(title: "提示",
                                                message: "電話至少10碼",
                                                preferredStyle: .alert)
-            
             let action = UIAlertAction.init(title: "OK",
                                             style: .default,
                                             handler: nil)
@@ -49,7 +57,15 @@ class InputViewController: UIViewController {
             return
         }
         
+        let content = ["name":name,"phone":phoen]
         
+        contents.append(content)
+        
+        let userDefault = UserDefaults.standard
+        userDefault.setValue(contents, forKey: "contents")
+        userDefault.synchronize()
+        phoneTF.text = ""
+        nameTF.text = ""
         
         
     }
